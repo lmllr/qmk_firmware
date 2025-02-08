@@ -8,7 +8,9 @@
 
 #include QMK_KEYBOARD_H
 #include "keymap_swiss_de.h"
+#include "sendstring_swiss_de.h"
 
+// Name the layers
 enum custom_layers {
     _QWERTZ,
     _BACKETS,
@@ -16,7 +18,24 @@ enum custom_layers {
     _GAMING
 };
 
- const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+// Disable autoshift on the media and gaming layers
+layer_state_t layer_state_set_user(layer_state_t state) {
+  switch (get_highest_layer(state)) {
+    // disable autoshift for select layers
+    case _MEDIA:
+    case _GAMING:
+      autoshift_disable();
+      break;
+    //  for any other layers, enable autoshift
+    default:
+      autoshift_enable();
+      break;
+    }
+  return state;
+}
+
+// Keymap proper
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTZ] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
@@ -38,9 +57,9 @@ enum custom_layers {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      CH_SECT,  _______, _______, KC_UP,  QK_BOOT, _______,                            CH_ASTR, CH_LCBR, CH_RCBR, CH_LABK, CH_AMPR, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_DEL,  _______, KC_LEFT, KC_DOWN, KC_RGHT, _______,                            CH_EQL,  CH_LPRN, CH_RPRN, CH_QUOT, CH_DIAE, CH_GRV,
+     KC_DEL,  _______, KC_LEFT, KC_DOWN, KC_RGHT, _______,                            CH_EQL,  CH_LPRN, CH_RPRN, CH_QUOT, CH_DIAE, CH_CIRC,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, EE_CLR,  _______, _______, _______, KC_LCBR, KC_PGUP,          KC_PGDN, CH_PLUS, CH_LBRC, CH_RBRC, CH_AMPR, CH_DLR,  _______,
+     _______, EE_CLR,  _______, _______, _______, _______, KC_PGUP,          KC_PGDN, CH_PLUS, CH_LBRC, CH_RBRC, CH_AMPR, CH_DLR,  _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, KC_SPC,                    KC_ENT,  TO(3),   _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
