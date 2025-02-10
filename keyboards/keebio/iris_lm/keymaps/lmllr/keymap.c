@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      CH_DEG,  CH_PLUS, CH_DQUO, CH_ASTR, CH_CCED, CH_PERC,                            CH_AMPR, CH_SLSH, CH_LPRN, CH_RPRN, CH_EQL,  KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     CH_SECT,  _______, _______, KC_UP,  QK_BOOT, _______,                            CH_ASTR, CH_LCBR, CH_RCBR, CH_LABK, CH_AMPR, CH_HASH,
+     CH_SECT,  _______, _______, KC_UP,  QK_BOOT, _______,                            CH_ASTR, CH_LCBR, CH_RCBR, CH_LABK, CH_TILD, CH_HASH,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_DEL,  _______, KC_LEFT, KC_DOWN, KC_RGHT, _______,                            CH_EQL,  CH_LPRN, CH_RPRN, CH_QUOT, CH_DIAE, CH_CIRC,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
