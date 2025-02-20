@@ -1,4 +1,10 @@
 #pragma once
 
-#define AUTO_SHIFT_TIMEOUT 180
+#define AUTO_SHIFT_TIMEOUT 175
 #define NO_AUTO_SHIFT_TAB
+
+#define HOLD_ON_OTHER_KEY_PRESS
+#define QUICK_TAP_TERM 120
+
+#define TAPPING_TERM 200
+#define TAPPING_TERM_PER_KEY

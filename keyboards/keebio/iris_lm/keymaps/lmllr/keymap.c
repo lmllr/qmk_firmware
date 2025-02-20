@@ -34,6 +34,17 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return state;
 }
 
+// Tap Dance declarations
+enum {
+    TD_HOME_END,
+};
+
+// Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Home, twice for End
+    [TD_HOME_END] = ACTION_TAP_DANCE_DOUBLE(KC_HOME,KC_END),
+};
+
 // Keymap proper
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -45,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LCTL, CH_A,    CH_S,    CH_D,    CH_F,    CH_G,                               CH_H,    CH_J,    CH_K,    CH_L,    CH_ODIA, CH_ADIA,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     OSM(MOD_LSFT), CH_Y, CH_X, CH_C,    CH_V,    CH_B,    KC_HOME,          KC_END,  CH_N,    CH_M,    CH_COMM, CH_DOT,  CH_MINS, OSM(MOD_RSFT),
+     OSM(MOD_LSFT), CH_Y, CH_X, CH_C,    CH_V,    CH_B,    TD(TD_HOME_END),  MS_BTN1, CH_N,    CH_M,    CH_COMM, CH_DOT,  CH_MINS, OSM(MOD_RSFT),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LGUI, MO(1),   KC_SPC,                    KC_ENT,  MO(2),   KC_RALT
+                                    KC_LGUI, MO(1),   KC_SPC,                    KC_ENT,  MO(2),   RALT_T(MS_BTN2)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
