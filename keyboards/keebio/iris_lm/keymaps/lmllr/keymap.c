@@ -94,13 +94,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                                    ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_ESC,  CH_1,    CH_2,    CH_3,    CH_4,    CH_5,                                         CH_6,    CH_7,    CH_8,    CH_9,    CH_0,    KC_F11,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                                    ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  CH_Q,    CH_W,    CH_E,    CH_R,    CH_T,                                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_TAB,  CH_Q,    CH_W,    CH_E,    CH_R,    CH_T,                                         CH_Z,    CH_U,    CH_I,    CH_O,    CH_P,    CH_UDIA,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                                    ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LCTL, CH_A,    CH_S,    CH_D,    CH_F,    CH_G,                                         CH_H,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_LCTL, CH_A,    CH_S,    CH_D,    CH_F,    CH_G,                                         CH_H,    CH_J,    CH_K,    CH_L,    CH_ODIA, CH_ADIA,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────────┐          ┌────────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, CH_Z,    CH_X,    CH_C,    CH_V,    CH_B,    RSFT(KC_F12),           KC_PENT,     CH_ADIA, CH_DLR,  XXXXXXX, XXXXXXX, XXXXXXX, TO(0),
+       KC_LSFT, CH_Z,    CH_X,    CH_C,    CH_V,    CH_B,    RSFT(KC_F12),           KC_PENT,     CH_N,    CH_M,    CH_COMM, CH_DOT,  CH_MINS, TO(0),
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────────┘          └──┬─────────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      CH_Y,    KC_SPC,  KC_LSFT,                       RCTL_T(CH_M), KC_PGUP, KC_PGDN
+                                      CH_Y,    KC_SPC,  KC_LSFT,                        RCTL_T(CH_M), KC_PGUP, KC_PGDN
                                   // └────────┴────────┴────────┘                      └─────────────┴────────┴────────┘
   )
 
